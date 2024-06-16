@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+    --mindaro: #e2eb98ff;
+    ---blue: #93a392;
+    --sage: #adbf97ff;
+    --celadon: #bad9a2;
+    --cambridge-blue-2: #9dc4b5ff;
+}
+
+* {
+    font-family: "Nunito Sans", sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    height: 100vh;
+    background-color: var(---blue);
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: block;
+    background-color: var(---blue);
+    background-image: linear-gradient(to bottom, var(---blue), var(---blue));
+    z-index: -1;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container,
+.containerRight {
+    display: flex;
+    width: 50vw;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 70vh;
+    margin-top: 15vh;
+}
+
+button:disabled {
+    display: none;
+}
+
+table {
+    margin: 1rem;
+    height: 50vh;
+}
+
+h3 {
+    margin: 0;
+    color: var(--mindaro);
+
+}
+
+.titleCard {
+    color: black;
+    margin-bottom: 2rem;
+}
+
+.cardHeader,
+.titleCard {
+    font-size: 2rem;
+}
+
+th {
+    padding: .3rem;
+    color: var(--mindaro);
+}
+
+tr {
+    height: .1rem;
+}
+
+td button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin: .2rem;
+    width: 5rem;
+    height: 3rem;
+    border: .1rem solid var(--celadon);
+    border-radius: .5rem;
+}
+
+td button:hover {
+    background-color: var(--sage);
+    color: var(--mindaro);
+    cursor: pointer;
+    transition: .2s;
+    border: 3px solid var(--mindaro);
+}
+
+.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 36vw;
+}
+
+.form-inline {
+    display: flex;
+    gap: .4rem;
+}
+
+#previous,
+#next {
+    background-color: var(---blue);
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    padding: .5rem;
+    font-weight: bold;
+}
+
+#previous:active,
+#next:active,
+td button:active {
+    transform: scale(0.90);
+}
+
+#previous:hover,
+#next:hover {
+    background-color: var(--mindaro);
+    color: black;
+    cursor: pointer;
+    transition: .3s;
+}
+
+label.lead {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+#month.form-control,
+#year.form-control {
+    height: 2rem;
+    width: 5rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    padding: .2rem;
+    font-size: 1rem;
+}
+
+.containerRight {
+    background-color: white;
+    display: flex;
+    align-items: center;
+}
+
+.containerRight img {
+    width: 100%;
+    height: 100%;
+}
+
+td button,
+th,
+#previous,
+#next {
+    font-size: 1.2rem;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 1rem;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 5px;
+    border-radius: 1rem;
+}
+
+.close {
+    color: var(--celadon);
+    float: right;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content form label {
+    margin-top: 10px;
+}
+
+.modal-content form input {
+    padding: 5px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.modal-content form button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: var(--celadon);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-content form button:hover {
+    background-color: var(--sage);
+}
+
+.modal-content form button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: var(---blue);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    padding: 10px;
+}
+
+button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+button span:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+}
+
+button:hover span {
+    padding-right: 15px;
+}
+
+button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+#dateInfo {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+}
