@@ -100,10 +100,11 @@ function closeModal() {
 function confirmReservation() {
     let name = document.getElementById("name").value;
     let email = document.getElementById("email").value;
+    let hour = document.getElementById("hour").value;
     let selectedDate = document.getElementById("selectedDate").value;
 
-    if (name && email) {
-        alert(`Reserva confirmada no dia ${selectedDate}`);
+    if (name && email && hour) {
+        alert(`Reserva confirmada para o dia ${selectedDate} às ${hour}. Até lá!!`);
         closeModal();
     } else {
         alert("Por favor, preencha todos os campos.");
@@ -119,9 +120,4 @@ window.onclick = function(event) {
     let email = document.getElementById("email").value;
     let hour = document.getElementById("hour").value;
     let selectedDate = document.getElementById("selectedDate").value;
-
-    if (name && email && hour) {
-        alert(`Reserva confirmada para o dia ${selectedDate} às ${hour}. Até lá!!`);
-        closeModal();
-    }
 }
